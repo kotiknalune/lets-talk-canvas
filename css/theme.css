@@ -293,13 +293,6 @@ line-height: 1rem;
      background-color: #191919; } }
  
 
-.persia {
-  background-image:url('/assets/persia.gif');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  visibility: hidden;
-}
 
 code {
   color: #ff8800;
@@ -309,4 +302,18 @@ code {
   display: flex;
   height: 370px;
   justify-content: space-around;
+}
+
+.modal {
+  position: absolute;
+  width: 40%;
+  left: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 20px;
+  font-size: 20px;
+  text-align: left;
+  margin-top: 30%;
+
 }
