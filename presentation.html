@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+      <title>Let's talk canvas</title>
+      <link rel="stylesheet" href="css/reset.css">
+      <link rel="stylesheet" href="css/reveal.css">
+      <link rel="stylesheet" href="css/theme.css">
+      <link rel="stylesheet" href="lib/css/monokai.css">
+   </head>
+   <body>
+      <div class="reveal">
+         <div class="slides">
+            <section class="intro">
+               <h1>
+                  <span>Let's talk about</span>
+                  <span>< canvas ></span>
+               </h1>
+               <div class="info">
+                  <p><small>Created by <a href="http://github.com/kotiknalune" target="_blank">Kate Railian</a></small></p>
+                  <p><small><a href="www.rss.com" target="_blank">RSS</a> 2020Q1</small></p>
+               </div>
+            </section>
+            <section class="persia">
+            </section>
+            <section id="fragments">
+               <h2>Contents</h2>
+               <ul>
+                  <li class="fragment">What is <code>canvas</code></li>
+                  <li class="fragment">Browser GameDev</li>
+                  <li class="fragment">Kiddie implementation</li>
+                  </li>
+                  <li class="fragment">WebGL VS. Canvas</li>
+                  <li class="fragment">Three.js / Babylon.js</li>
+                  <li class="fragment">2020 Engines & Libraries</li>
+                  <li class="fragment">AR / VR</li>
+                  <li class="fragment">Resources</li>
+               </ul>
+            </section>
+            <section>
+               <section>
+                  <h1>What is <code> CANVAS</code></h1>
+               </section>
+               <section>
+                  <img src="./assets/controller.png">
+                  <p><code>canvas</code> element was introduced in late 2014</p>
+               </section>
+               <section>
+                  <h3>General uses</h3>
+                  <p>Together with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas API</a> it can be used for animation, game graphics, data visualization, photo manipulation, and real-time video processing</p>
+               </section>
+               <section>
+                  <h3>Compatibility</h3>
+                  <p>It's supported by most browsers, starting from IE 9 but but not all features, so be mindful and <a href="https://caniuse.com/#search=canvas" target="_blank">check</a> in advance</p>
+               </section>
+               <section>
+                  <h3>A nice bonus...</h3>
+                  <p>it can be used to build web applications for all devices, not just desktops
+                  </p>
+               </section>
+            </section>
+            <section>
+               <h3>All is Canvas - Canvas is all</h3>
+               <p> Wrong. Take a look at this awesome <a href="https://minocernota.com/articles/pure_css_game/">pure css game</a> by <a href="https://minocernota.com/">Miňo Černota</a></p>
+               <div class="img-flex">
+                  <img src="/assets/css-game2.png">
+                  <img src="/assets/css-game.png">
+               </div>
+            </section>
+            <section>
+               <section>
+                  <h2>Browser GameDev</h2>
+			   </section>
+			   <section>
+				 <div class="img-flex" style="height:200px">
+					<img src="/assets/html-logo.png">
+					<img src="/assets/webgl-logo.png">
+					<img src="/assets/babylon-logo.png">
+					<img src="/assets/three-js.png">
+				 </div>
+				 <p style="margin: 40px 0px;">VS.</p>
+				 <div class="img-flex" style="height:200px">
+					<img src="/assets/unity-logo.png">
+				 </div>
+				 <aside class="notes">
+					Compare a simple spinning cube in Babylon.js and Unity3D.  
+					Babylon.js would be a few bytes, load instantly and can integrate with all other HTML elements.  
+					Can interact via standard Javascript events. 
+					 I use Babylon.js for my hybrid website 'cos I need the seamless integration.  
+					 Unity3D takes full page, ages to load, 20 MB file sizes.  However, you could pull off Quake in Unity3D webGL. 
+					  Babylon.js doesn't have the versatility to do that yet. Ive worked with several 3d engines and babylon is 
+					  powerful and lightweight and would more then be capable of a fully deployed multiplayer fps
+					Webgl game need to be "light" fast and flexible. if your are looking for cross platform game, unity is your 
+					friend. If your are looking for webgl only and an "optimized" way, bjs is my choice. Games that target the 
+					web you have to conscious of file size (as that is download/waiting time) and stability,
+					 at the moment the webgl tech from the big players such as unity and unreal is nearly there but not
+					  quite in my opinion. Much crashing and instability on every demo I have seen so far and those are only demos
+					   never mind a genuine long terms production piece. It is getting better though and hopefully soon we will 
+					   get there, but if you are targeting desktops remember that folks don't upgrade their pcs as often as their 
+					   devices. Hell my pc could be considered ancient and is still going strong.
+					
+				 </aside>
+			   </section>
+            </section>
+         </div>
+      </div>
+      <script src="js/reveal.js"></script>
+      <script>
+         Reveal.initialize({
+         	hash: true,
+         	dependencies: [
+         		{ src: 'plugin/markdown/marked.js' },
+         		{ src: 'plugin/markdown/markdown.js' },
+         		{ src: 'plugin/highlight/highlight.js' },
+         		{ src: 'plugin/notes/notes.js', async: true }
+         	]
+         });
+      </script>
+   </body>
+</html>
