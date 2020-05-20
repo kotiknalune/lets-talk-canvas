@@ -37,10 +37,8 @@
                <ul>
                   <li class="fragment">What is <code>canvas</code></li>
                   <li class="fragment">Browser GameDev</li>
-                  <li class="fragment">Kiddie implementation</li>
-                  <li class="fragment">WebGL VS. Canvas</li>
-                  <li class="fragment">2020 Engines & Libraries</li>
-                  <li class="fragment">Three.js / Babylon.js</li>
+                  <li class="fragment">2D Games</li>
+                  <li class="fragment">3D Games: + Frameworks</li>
                   <li class="fragment">AR / VR</li>
                   <li class="fragment">Resources</li>
                </ul>
@@ -63,23 +61,71 @@
                   </aside>
                </section>
                <section>
-                  <h3>General uses</h3>
+                  <h4>HTML / CSS</h4>
+                  <pre><code class="hljs" data-trim data-line-numbers="1|2|3|6">
+// CSS
+body { margin: 0; }
+canvas { width: 100%; height: 100%; }
+ 
+// HTML            
+<canvas id="canvas"></canvas>
+                  </code></pre>
+
+                  <h4>JS</h4>
+                  <pre><code class="hljs" data-trim data-line-numbers="1|2|4|5">
+// JS
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext("2d");
+ctx.beginPath();
+ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+ctx.stroke();           
+                  </code></pre>
+                  <aside class="notes">
+                     slide 3.2
+                  </aside>
+               </section>
+                <section>
+                  <h3>Overview</h3>
                   <p>Together with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas API</a> it can be used for animation, game graphics, data visualization, photo manipulation, and real-time video processing</p>
                   <aside class="notes">
-                     slide 3.3
+                     It's supported by most browsers, starting from IE 9 but but not all features, so be mindful and check before using
                   </aside>
                </section>
-               <section>
-                  <h3>Compatibility</h3>
-                  <p>It's supported by most browsers, starting from IE 9 but but not all features, so be mindful and <a href="https://caniuse.com/#search=canvas" target="_blank">check</a> in advance</p>
+               <section> 
+                  <h3>Canvas Graphics</h3>
+                  <div style="display: flex; justify-content: space-between;">
+                 
+                  <ul> 
+                     <h4 style="color: #ff8800;">Shapes</h4>
+                  <li>Squares</li>
+                  <li>Circles (arcs)</li>
+                  <li>Lines</li>
+                  </ul>
+                 
+                  <ul>
+                      <h4 style="color: #ff8800;">Elements</h4>
+                  <li>Text</li>
+                  <li>Gradient</li>
+               </ul>
+
+               <ul>
+                  <h4 style="color: #ff8800;">Media</h4>
+              <li>Images</li>
+              <li>Video</li>
+           </ul>
+               </div>
                   <aside class="notes">
-                     slide 3.4
+                    slide
                   </aside>
                </section>
+
+               <section data-background-iframe="https://team.redcollar.digital/" data-background-interactive>
+      
+            </section>
+             
+           
                <section>
-                  <h3>A nice bonus...</h3>
-                  <p>it can be used to build web applications for all devices, not just desktops
-                  </p>
+                  <h3>Mainly, <code>canvas</code> element it can be used to build web applications for all devices, not just desktops</h3>
                   <aside class="notes">
                      slide 3.5
                   </aside>
@@ -151,57 +197,15 @@
 					slide 5.3
 				 </aside>
             </section>
-
-            <section>
-              <h3>Talking about 2D</h3>
-              <h4>Canvas API vs. WebGL</h4>
-              <ul>
-               <li class="fragment">Integrates with an already built system</li>
-               <li class="fragment">Easier to use</li>
-               <li class="fragment">Faster</li>
-               <li class="fragment">Has project-required capabilities</li>
-               <li class="fragment">Production cost</li>
-               <li class="fragment">Platfrom-independant</li>
-              </ul>
-               <aside class="notes">
-                 slide 5.4
-               </aside>
-              </section>
-              <section>
-                 <h3>Personal view</h3>
-               <table>
-						<tbody>
-							<tr>
-								<td style="color:#ff8800">Integration</td>
-								<td>Both are JS APIs, hence similar integration</td>
-							</tr>
-							<tr>
-								<td style="color:#ff8800">Ease</td>
-								<td>With library - Canvas API From scratch - WebGL</td>
-							</tr>
-							<tr>
-								<td style="color:#ff8800">Speed</td>
-								<td>WebGL</td>
-                     </tr>
-                     <tr>
-								<td style="color:#ff8800">Capabilities</td>
-								<td>WebGL</td>
-                     </tr>
-                     <tr>
-								<td style="color:#ff8800">Lower cost</td>
-								<td>Canvas API</td>
-                     </tr>
-                     <tr>
-								<td style="color:#ff8800">Platform</td>
-								<td>Similar</td>
-							</tr>
-						</tbody>
-					</table>
-              </section>
             </section>
             <section>
                <section>
-                  <h2>Canvas on steroids</h2>
+                  <h2>2D Games</h2>
+                  <h4>WebGL vs. Canvas API</h4>
+               </section>
+               <section>
+                  <h4 style="color:#ff8800; text-align: left;">NOTICE:</h4>
+                  <p style="text-align: left;">Yes, there are numerous 2D libraries and engines to choose from aside from vanilla, but bear down to basics for now. . .</p>
                </section>
                <section>
                   <h2>WebGL</h2>
@@ -223,13 +227,92 @@
                   <img src="./assets/webgl 2.0.PNG">
                   <p><small>. . . Safari declared it won't support any new version of WebGL and is rumored to be developing a native engine, which will release on the same year as Half-Life 3</small></p>
                </section>
+
+               <section>
+                 
+                  <h3>Canvas API vs. WebGL</h3>
+                  <p><small>General criteria for evaluation</small></p>
+                  <ul>
+                   <li class="fragment">Integrates with an already built system</li>
+                   <li class="fragment">Easier to use</li>
+                   <li class="fragment">Faster</li>
+                   <li class="fragment">Has project-required capabilities</li>
+                   <li class="fragment">Production cost</li>
+                   <li class="fragment">Platfrom-independant</li>
+                  </ul>
+                   <aside class="notes">
+                     slide 5.4
+                   </aside>
+                  </section>
+                  <section>
+                     <h3>Personal view</h3>
+                   <table>
+                      <tbody>
+                         <tr>
+                            <td style="color:#ff8800">Integration</td>
+                            <td>Both are JS APIs, hence similar integration</td>
+                         </tr>
+                         <tr>
+                            <td style="color:#ff8800">Ease</td>
+                            <td>With library - Canvas API From scratch - WebGL</td>
+                         </tr>
+                         <tr>
+                            <td style="color:#ff8800">Speed</td>
+                            <td>WebGL</td>
+                         </tr>
+                         <tr>
+                            <td style="color:#ff8800">Capabilities</td>
+                            <td>WebGL</td>
+                         </tr>
+                         <tr>
+                            <td style="color:#ff8800">Lower cost</td>
+                            <td>Canvas API</td>
+                         </tr>
+                         <tr>
+                            <td style="color:#ff8800">Platform</td>
+                            <td>Similar</td>
+                         </tr>
+                      </tbody>
+                   </table>
+                  </section>
+
             </section>
             <section>
-               <p>Be it Canvas API or WebGl, being buried under a wall of self-made buggy bicycles with crutches is no ones dream com true...</p>
+               <p>Be it Canvas API or WebGl, being buried under a wall of self-made buggy bicycles and crutches is no ones dream com true...</p>
+               <p style="color:#ff8800">< drumroll ></p>
             </section>
             <section>
                <section>
-                  <h3>Libraries</h3>
+                  <h3>3D Games: + Libraries</h3>
+               </section>
+               <section>
+                  <h3>The tale of two frameworks</h3>
+                  <div style="display: flex; justify-content: center; text-align: center;">
+                     <ul style="font-size: 2rem; text-align: center; list-style: none;">
+                        <img src="/assets/babylon-logo.png" alt="Babylon.js" height="200">
+                        <h4 style="color: #ff8800;"><a href="https://www.babylonjs-playground.com/#I6V1ST" target="_blank">Babylon.js</a></h4>
+                        <p><small>Summer 2013</small></p>
+                        <li>Babylon Native</li>
+                        <li>Node material editor</li>
+                     </ul>
+                    
+                  <ul style="font-size: 2rem; text-align: center; list-style: none;">
+                     <img src="/assets/three-js.png" alt="Three.js" height="200">
+                     <h4 style="color: #ff8800;"><a href="https://threejs.org/" target="_blank">Three.js</a></h4>
+                     <p><small>Spring 2009</small></p>
+                     <li>Modular rendering interface</li>
+                     <li>Not limited to WebGL</li>
+                  </ul>
+                  </div>
+                  <div>
+                  </div>
+                  <aside class="notes">
+                     Augmented Reality, Mixed Reality, and Virtual Reality  
+                  </aside>
+               </section>
+               <section data-background-image="/assets/frameworks.png" data-background-size="1150px">
+                  <h3>2020</h3>
+<p><a href="https://github.com/collections/javascript-game-engines" target="_blank">View game engines</a></p>
                </section>
             </section>
             <section>
@@ -247,6 +330,20 @@
 						<p><a href="https://aframe.io/">A-Frame</a> is one of several but a personal favorite due to ease of use and a comprehensive documentation</p>
 					</div>
             </section>
+         </section>
+         <section>
+            <h3>Resources</h3>
+            <ul>
+               <p><small>If you wish to pursue this topic further, here are some useful links</small></p>
+               <li><a href="https://joshondesign.com/p/books/canvasdeepdive/title.html" target="_blank">Canvas Deep Dive</a></li>
+               <li><a href="http://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html" target="_blank">Canvas Handbook</a></li>
+               <li><a href="https://webglfundamentals.org/" target="_blank">WebGL Fundamentals</a></li> 
+               <li><a href="https://www.youtube.com/watch?v=gm1QtePAYTM" target="_blank">HTML5 Canvas API Crash Course</a></li>
+            </ul>
+         </section>
+         <section>
+            <h1>Game over</h1>
+            <img src="./assets//titenic.png">
          </section>
          </div>
       </div>
