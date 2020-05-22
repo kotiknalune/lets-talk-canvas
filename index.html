@@ -23,14 +23,15 @@
                   <p><small><a href="www.rss.com" target="_blank">RSS</a> 2020Q1</small></p>
                </div>
                <aside class="notes">
-                  slide 1
+                  Let's talk about canvas...
                </aside>
             </section>
             <section>
-               <img src="../assets/persia.gif" style="width: 100%;">
+               <img src="./assets/persia.gif" style="width: 100%;">
                <aside class="notes">
-                  slide 2
+                  This pretty much sums up the learning curve for canvas element. From usual cycles and functions we transition to shaders, textures, physics and particles... yikes. 
                </aside>
+               `
             </section>
             <section id="fragments">
                <h2>Contents</h2>
@@ -43,21 +44,21 @@
                   <li class="fragment">Resources</li>
                </ul>
                <aside class="notes">
-                  slide 3
+                  We'll very briefly cover tha main topics that come up when you google "canvas"
                </aside>
             </section>
             <section>
                <section>
                   <h1>What is <code> CANVAS</code></h1>
                   <aside class="notes">
-                     slide 3.1
+                     What is canvas...
                   </aside>
                </section>
                <section>
-                  <img src="../assets/controller.png">
+                  <img src="./assets/controller.png">
                   <p><code>canvas</code> element was introduced in late 2014</p>
                   <aside class="notes">
-                     slide 3.2
+                     Canvas is a 2D drawing API added to documentation in late 2014 and in our editor it will look something like this...
                   </aside>
                </section>
                <section>
@@ -70,7 +71,6 @@ canvas { width: 100%; height: 100%; }
 // HTML            
 <canvas id="canvas"></canvas>
                   </code></pre>
-
                   <h4>JS</h4>
                   <pre><code class="hljs" data-trim data-line-numbers="1|2|4|5">
 // JS
@@ -81,53 +81,54 @@ ctx.arc(95, 50, 40, 0, 2 * Math.PI);
 ctx.stroke();           
                   </code></pre>
                   <aside class="notes">
-                     slide 3.2
+                     This is the simplest implementation you can find. That's all the CSS and HTML you will need, which is deceivingly relieving. 
+                     ANd the JS bit draws a single 40 radius circle... that's where the fun part of canvas lies. 
                   </aside>
                </section>
-                <section>
+               <section>
                   <h3>Overview</h3>
                   <p>Together with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas API</a> it can be used for animation, game graphics, data visualization, photo manipulation, and real-time video processing</p>
                   <aside class="notes">
-                     It's supported by most browsers, starting from IE 9 but but not all features, so be mindful and check before using
+                     It's supported by most browsers, starting from IE 9 but not all features, so be mindful and check before using.
+                     Keep in mind that canvas element and canvas api are like conjoined twins - separate entities but not really
                   </aside>
                </section>
-               <section> 
+               <section>
                   <h3>Canvas Graphics</h3>
                   <div style="display: flex; justify-content: space-between;">
-                 
-                  <ul> 
-                     <h4 style="color: #ff8800;">Shapes</h4>
-                  <li>Squares</li>
-                  <li>Circles (arcs)</li>
-                  <li>Lines</li>
-                  </ul>
-                 
-                  <ul>
-                      <h4 style="color: #ff8800;">Elements</h4>
-                  <li>Text</li>
-                  <li>Gradient</li>
-               </ul>
-
-               <ul>
-                  <h4 style="color: #ff8800;">Media</h4>
-              <li>Images</li>
-              <li>Video</li>
-           </ul>
-               </div>
+                     <ul>
+                        <h4 style="color: #ff8800;">Shapes</h4>
+                        <li>Squares</li>
+                        <li>Circles (arcs)</li>
+                        <li>Lines</li>
+                     </ul>
+                     <ul>
+                        <h4 style="color: #ff8800;">Elements</h4>
+                        <li>Text</li>
+                        <li>Gradient</li>
+                     </ul>
+                     <ul>
+                        <h4 style="color: #ff8800;">Media</h4>
+                        <li>Images</li>
+                        <li>Video</li>
+                     </ul>
+                  </div>
                   <aside class="notes">
-                    slide
+                     These are all the elements you could possibly add to your canvas. 
+                     As you can see, it allows only basic shapes and animating them through an update() loop.
+                     But it's up to you to combine them into something not as trivial.
                   </aside>
                </section>
-
                <section data-background-iframe="https://team.redcollar.digital/" data-background-interactive>
-      
-            </section>
-             
-           
+                  <aside class="notes">
+                     This is a good example of what you can do with canvas, this is a hiring site for a dev company and if we were to take a look at its source code we'd see 
+                     thats aside from text, it's all rendered on canvas. 
+                  </aside>
+               </section>
                <section>
                   <h3>Mainly, <code>canvas</code> element it can be used to build web applications for all devices, not just desktops</h3>
                   <aside class="notes">
-                     slide 3.5
+                   As you can see, canvas is not limited to gamedev, its powerful elements that can be used to create beautiful sites and web apps for all devices.
                   </aside>
                </section>
             </section>
@@ -139,80 +140,103 @@ ctx.stroke();
                   <img src="./assets/css-game.png">
                </div>
                <aside class="notes">
-                  slide 4
+                  In this presentation I will be focusing on the gaming side of canvas, and it goes to point out that if you are creative enough,
+                  anything can be your ally on the way to make your game. Take a look at this stunning rendition of Adventure times maze made on pure css. 
                </aside>
             </section>
             <section>
                <section>
                   <h2>Browser GameDev</h2>
                   <aside class="notes">
-                     slide 5.1
+                    As I mentioned, I will be focusing on game dev side of canvas, aso let's see what that all is about...
                   </aside>
-            </section>
-            
-            <section>
-               <h3>First off...</h3>
-               <table>
-						<thead>
-							<tr>
-								<th colspan="2"><p style="color:#ff8800; text-align: center;">Canvas vs. SVG / CSS / DOM</p></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td style="color:#ff8800">Canvas</td>
-								<td>charts, graphs, dynamic diagrams <small>with less memory use but a wall of code </small></td>
-							
-							</tr>
-							<tr>
-								<td style="color:#ff8800">SVG</td>
-								<td>existing shapes to render <small>a sweet tandem with Adobe Illustrator</small></td>
-							
-							</tr>
-							<tr>
-								<td style="color:#ff8800">CSS & DOM</td>
-								<td>large static areas to animate or 3D transforms </td>
-							
-							</tr>
-						</tbody>
-					</table>
-   
-               <aside class="notes">
-                 slide 5.2
-               </aside>
-              </section>
+               </section>
+               <section>
+                  <h3>First off...</h3>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th colspan="2">
+                              <p style="color:#ff8800; text-align: center;">Canvas vs. SVG / CSS / DOM</p>
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td style="color:#ff8800">Canvas</td>
+                           <td>charts, graphs, dynamic diagrams <small>with less memory use but a wall of code </small></td>
+                        </tr>
+                        <tr>
+                           <td style="color:#ff8800">SVG</td>
+                           <td>existing shapes to render <small>a sweet tandem with Adobe Illustrator</small></td>
+                        </tr>
+                        <tr>
+                           <td style="color:#ff8800">CSS & DOM</td>
+                           <td>large static areas to animate or 3D transforms </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <aside class="notes">
+                     ... but before we nose dive into that, I wanted to mention anything BUT games. 
+                     What should you use when creating dynamic content for your site... 
 
-			   <section>
-				 <div class="img-flex" style="height:200px">
-					<img src="./assets/html-logo.png">
-					<img src="./assets/webgl-logo.png">
-					<img src="./assets/babylon-logo.png">
-					<img src="./assets/three-js.png">
-				 </div>
-				 <p style="margin: 40px 0px;">VS.</p>
-				 <div class="img-flex" style="height:200px">
-					<img src="./assets/unity-logo.png">
-				 </div>
-				 <aside class="notes">
-					slide 5.3
-				 </aside>
-            </section>
+                    1) Canvas is lower level than those others so you can have more control over the drawing and use less memory, but at the cost of having to write more code. 
+                    2) Use SVG when you have existing shapes that you want to render to the screen, like a map that came out of Adobe Illustrator. 
+                    3) Use CSS or DOM animation when you have large static areas that you wish to animate, or if you want to use 3D transforms. 
+                  </aside>
+               </section>
+               <section>
+                  <div class="img-flex" style="height:200px">
+                     <img src="./assets/html-logo.png">
+                     <img src="./assets/webgl-logo.png">
+                     <img src="./assets/babylon-logo.png">
+                     <img src="./assets/three-js.png">
+                  </div>
+                  <p style="margin: 40px 0px;">VS.</p>
+                  <div class="img-flex" style="height:200px">
+                     <img src="./assets/unity-logo.png">
+                  </div>
+                  <aside class="notes">
+                    With that out of the way, lets see what web-games are made of. My first question in this quest was to understand why should I invest my time in
+                    learning the ways of canvas api, webgl, three.js and other wonderful frameworks if there is an already well established giant such as Unity.
+
+                    Canvas/Webgl games need to be fast and flexible. If you are looking for a cross platform game, unity is your friend.
+                    But with games that target the web you have to be conscious of file size and stability, at the moment the webgl tech from the big players such as unity and unreal 
+                    is nearly there but not quite in my opinion. A lot of crashing and instability on every demo I have seen so far and those are only demos, never mind a
+                    genuine long terms production piece. It is getting better though and hopefully soon we will get there, but if you are targeting desktops remember
+                    that users don't upgrade their pcs as often as their devices.
+                  </aside>
+               </section>
+               <section data-background-iframe="https://www.jonathan-petitcolas.com/webgl-experiments/00-rotating-cube/">
+                  <div class="modal" style="background: none; box-shadow: none;"> 
+                     <p>Canvas + Babylon.js </p>
+                     <p><small>(world's leading WebGL-based, graphics engine)</small></p>
+                  </div>
+                  <aside class="notes">
+                     Compare an simple spinning cube animation. Babylon.js would be a few bytes, load instantly and can integrate with all other HTML elements interact via standard Javascript events. 
+                     Unity3D takes up a full page, takes ages to load and eats minimum 20 MB in file sizes. 
+                     Babylon is a powerful and lightweight engine and would more than be capable of a fully deployed MMORPG but it still doesn't match the versatility of Unity.
+                  </aside>
+               </section>
             </section>
             <section>
                <section>
                   <h2>2D Games</h2>
                   <h4>WebGL vs. Canvas API</h4>
-               </section>
-               <section>
-                  <h4 style="color:#ff8800; text-align: left;">NOTICE:</h4>
-                  <p style="text-align: left;">Yes, there are numerous 2D libraries and engines to choose from aside from vanilla, but bear down to basics for now. . .</p>
+                  <aside class="notes">
+                     2D and 3D are interlinked, in a way, but have colossal differences what it comes to development. 
+                     And yes, there are numerous 2D libraries and engines to choose from aside from vanilla, but bear down with me to basics for now. . .
+                     The Canvas API largely focuses on 2D graphics. The WebGL API, which also uses the canvas element, draws hardware-accelerated 2D and 3D graphics.
+                  </aside>
                </section>
                <section>
                   <h2>WebGL</h2>
                   <p>Basically, <a href="https://get.webgl.org/ target="_blank"">WebGL</a> is a Javascript API ( based on OpenGL ) that allows us to render interactive 2D and 3D graphics</p>
                   <p style="color:#ff8800">Version 1.0  |  Version 2.0</p>
                   <aside class="notes">
-                     WebGL 1.0 was released in 2011 - Exposed 3D rendering to the Web Platform for the first time (GL ES 2.0)
+                     WebGL 1.0 was released in 2011 - Exposed 3D rendering to the Web Platform for the first time
+                     Technical issues such as known hardware problems or lack of required GPU features may prevent WebGL from running in some cases.
+
                   </aside>
                </section>
                <section>
@@ -226,56 +250,79 @@ ctx.stroke();
                   <p><small>But everything changed when an update was released... </small></p>
                   <img src="../assets/webgl 2.0.PNG">
                   <p><small>. . . Safari declared it won't support any new version of WebGL and is rumored to be developing a native engine, which will release on the same year as Half-Life 3</small></p>
+                  <aside class="notes">
+                     WebGL 2.0 requires hardware with OpenGL ES 3.0 support or comparable desktop OpenGL feature support. 
+                     Not all systems capable of running WebGL 1.0 will be able to run WebGL 2.0.
+                  </aside>
                </section>
-
                <section>
-                 
                   <h3>Canvas API vs. WebGL</h3>
                   <p><small>General criteria for evaluation</small></p>
                   <ul>
-                   <li class="fragment">Integrates with an already built system</li>
-                   <li class="fragment">Easier to use</li>
-                   <li class="fragment">Faster</li>
-                   <li class="fragment">Has project-required capabilities</li>
-                   <li class="fragment">Production cost</li>
-                   <li class="fragment">Platfrom-independant</li>
+                     <li class="fragment">Integrates with an already built system</li>
+                     <li class="fragment">Easier to use</li>
+                     <li class="fragment">Faster</li>
+                     <li class="fragment">Has project-required capabilities</li>
+                     <li class="fragment">Production cost</li>
+                     <li class="fragment">Platfrom-independant</li>
                   </ul>
-                   <aside class="notes">
-                     slide 5.4
-                   </aside>
-                  </section>
-                  <section>
-                     <h3>Personal view</h3>
-                   <table>
-                      <tbody>
-                         <tr>
-                            <td style="color:#ff8800">Integration</td>
-                            <td>Both are JS APIs, hence similar integration</td>
-                         </tr>
-                         <tr>
-                            <td style="color:#ff8800">Ease</td>
-                            <td>With library - Canvas API From scratch - WebGL</td>
-                         </tr>
-                         <tr>
-                            <td style="color:#ff8800">Speed</td>
-                            <td>WebGL</td>
-                         </tr>
-                         <tr>
-                            <td style="color:#ff8800">Capabilities</td>
-                            <td>WebGL</td>
-                         </tr>
-                         <tr>
-                            <td style="color:#ff8800">Lower cost</td>
-                            <td>Canvas API</td>
-                         </tr>
-                         <tr>
-                            <td style="color:#ff8800">Platform</td>
-                            <td>Similar</td>
-                         </tr>
-                      </tbody>
-                   </table>
-                  </section>
+                  <aside class="notes">
+                     Is there any reason, except performance, for using WebGL instead of 2D-Canvas for 2D games/apps? 
+                     In other words what 2D functionalities are offered by WebGL which are not possible to achieve easily with 2D-Canvas?
+                     Looking at this question from another side - how does a developer choose one technology over another?
+                     So I'll discuss the differences between canvas and webGL APIs regarding these qualities.
+                  </aside>
+               </section>
+               <section>
+                  <h3>Personal view</h3>
+                  <table>
+                     <tbody>
+                        <tr>
+                           <td style="color:#ff8800">Integration</td>
+                           <td>Both are JS APIs, hence similar integration</td>
+                        </tr>
+                        <tr>
+                           <td style="color:#ff8800">Ease</td>
+                           <td>With library - Canvas API From scratch - WebGL</td>
+                        </tr>
+                        <tr>
+                           <td style="color:#ff8800">Speed</td>
+                           <td>WebGL</td>
+                        </tr>
+                        <tr>
+                           <td style="color:#ff8800">Capabilities</td>
+                           <td>WebGL</td>
+                        </tr>
+                        <tr>
+                           <td style="color:#ff8800">Lower cost</td>
+                           <td>Canvas API</td>
+                        </tr>
+                        <tr>
+                           <td style="color:#ff8800">Platform</td>
+                           <td>Similar</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <aside class="notes">
+                     The biggest advantage is the programmability of the pipeline, and the performance. 
+                     For example, say you are drawing 2 boxes one above other and one is hidden, some GL implementations have scope for discarding the hidden box.
 
+                     2.1) They are both supported by a number of libraries that could speed up your coding. 
+                     Different libraries give you different ways to organize your code, so library choice dictates how your drawing APIs are structured.
+                     If you use a library, the ease of writing code depends on the library itself.
+
+                     2.2) If you write code from zero, the canvas API is much easier to learn and understand. 
+                     It requires minimal math knowledge, and development is fast and straightforward.
+
+                     3, 4) WebGL is faster and it has more capabilities. It's a native 3D API that gives you full access to the rendering pipeline, 
+                     code and effects are executed faster and are more 'tweakable'. With webGL there really is no limit.
+
+                     5) Working with the WebGL API requires strong math skills and a full understanding of the rendering pipeline. 
+                     Hence the production is slower due to the size and complexity of such a code base, and therefore it costs more.
+                     
+                     6) Both canvas and webGL are html5 goodies. Usually the devices that support one will support and the other.
+                  </aside>
+               </section>
             </section>
             <section>
                <p>Be it Canvas API or WebGl, being buried under a wall of self-made buggy bicycles and crutches is no ones dream com true...</p>
@@ -284,6 +331,9 @@ ctx.stroke();
             <section>
                <section>
                   <h3>3D Games: + Libraries</h3>
+                  <aside class="notes">
+
+                  </aside>
                </section>
                <section>
                   <h3>The tale of two frameworks</h3>
@@ -295,56 +345,97 @@ ctx.stroke();
                         <li>Babylon Native</li>
                         <li>Node material editor</li>
                      </ul>
-                    
-                  <ul style="font-size: 2rem; text-align: center; list-style: none;">
-                     <img src="./assets/three-js.png" alt="Three.js" height="200">
-                     <h4 style="color: #ff8800;"><a href="https://threejs.org/" target="_blank">Three.js</a></h4>
-                     <p><small>Spring 2009</small></p>
-                     <li>Modular rendering interface</li>
-                     <li>Not limited to WebGL</li>
-                  </ul>
+                     <ul style="font-size: 2rem; text-align: center; list-style: none;">
+                        <img src="./assets/three-js.png" alt="Three.js" height="200">
+                        <h4 style="color: #ff8800;"><a href="https://threejs.org/" target="_blank">Three.js</a></h4>
+                        <p><small>Spring 2009</small></p>
+                        <li>Modular rendering interface</li>
+                        <li>Not limited to WebGL</li>
+                     </ul>
                   </div>
                   <div>
                   </div>
                   <aside class="notes">
-                     Augmented Reality, Mixed Reality, and Virtual Reality  
+                     Babylon.js, being the relative newcomer, broke onto the scene in the summer of 2013. Brought to you by the minds at Microsoft, it was introduced alongside 
+                     IE 11’s first official support for the WebGL API. Its a powerful rendering engine with augmented, mixed, and virtual reality tools, node material editor not unlike Blender 
+                     and with Babylon native you can now supply any device with your newest creation.
+
+                     Three.js got its start back in April of 2009 and was originally written in ActionScript before being translated to JavaScript. 
+                     Having been created before the introduction of WebGL, Three.js has the unique convenience of a modular rendering interface 
+                     allowing it to be used with SVG and HTML5’s canvas element in addition to WebGL.
+
+                     It was created with one goal in mind: to take advantage of web based renderers for creating GPU enhanced 3D graphics and animations. 
+                     As such, this framework employs a very broad approach to web graphics without focusing on any single animation niche. This flexible design makes 
+                     Three.js a great tool for general purpose web animations like logos or modeling applications
+
                   </aside>
                </section>
                <section data-background-image="./assets/frameworks.png" data-background-size="1150px">
                   <h3>2020</h3>
-<p><a href="https://github.com/collections/javascript-game-engines" target="_blank">View game engines</a></p>
+                  <p><a href="https://github.com/collections/javascript-game-engines" target="_blank">View game engines</a></p>
+                  <aside class="notes">
+                     As a general note, finding the best library or engine for you out there, is completely up to you. 
+                     You’re the one who knows what kind of game you want to create and your level of understanding of internal game architecture. 
+                     So go through the list and pick the ones that sound like the best fit for your needs and level.
+
+                     Some honorable mentions are without a doubt Melon JS -  a 2D focused game engine, its very beginner friendly and yet powerful
+                     ct.JS has its own dev environment and as a bonus, comes with moderately well written russian documentation.
+                     Phase JS - has Canvas support for those devices that don’t support WebGL and it is geared towards 2D game development + plugins
+                     Pixi JS is an amazingly flexible and powerful 2D visualization library, created with the purpose of building beautiful web experiences, which does not necessarily translate into games
+                     physics and material.js - these libraries focus on the physics aspect of object interaction. You can use this library for game development or for any other type of simulation you might want to create.
+                     I strongly recommend visiting their demo pages to really feel the full power of the force.
+                  </aside>
                </section>
             </section>
             <section>
-            <section>
-               <h3>VR / AR</h3>
-               <div class="img-flex" style="height:400px">
-                  <img src="./assets/ar1.gif">
-                  <img src="./assets/ar2.gif">
-                </div>
-            </section>
-
-            <section data-background-iframe="https://aframe.io/examples/showcase/anime-UI/" data-background-interactive>
+               <section>
+                  <h3>VR / AR</h3>
+                  <div class="img-flex" style="height:400px">
+                     <img src="./assets/ar1.gif">
+                     <img src="./assets/ar2.gif">
+                  </div>
+                  <aside class="notes">
+                     And finally theres the newest niche added in early 2014 to our browsers - virtual and augmented reality. 
+                     Made possible by WebVR, an experimental JavaScript api that enables applications to interact with virtual reality devices, 
+                     such as the HTC Vive, Oculus Rift or Google Cardboard in a web browser
+                  </aside>
+               </section>
+               <section data-background-iframe="https://aframe.io/examples/showcase/hello-metaverse/" data-background-interactive>
                   <div class="modal">
-               <h2>AR / VR Library</h2>
-						<p><a href="https://aframe.io/">A-Frame</a> is one of several but a personal favorite due to ease of use and a comprehensive documentation</p>
-					</div>
+                     <h2>AR / VR Library</h2>
+                     <p><a href="https://aframe.io/">A-Frame</a> is one of several but a personal favorite due to ease of use and a comprehensive documentation</p>
+                  </div>
+               </section>
+               <aside class="notes">
+                  Although some of the previous libraries have had compatibility with VR as an added feature, 
+                  A-Frame was built with VR and AR in mind. This means the focus of the entire framework is shifted. Of course, that means you can create 3D games with this it, 
+                  but if you’re using WebXR compatible browsers or even the experimental features in the latest versions of Chrome that provide support for WebXR AR you’ll be able to 
+                  make the most out of this framework. Since A-Frame was designed to be used on the browser, it has a very mark-up based syntax, so instead of relying heavily on JavaScript, 
+                  it also uses some custom markup elements. 
+
+                  And let's agree, looks pretty darn cool.
+               </aside>
             </section>
-         </section>
-         <section>
-            <h3>Resources</h3>
-            <ul>
-               <p><small>If you wish to pursue this topic further, here are some useful links</small></p>
-               <li><a href="https://joshondesign.com/p/books/canvasdeepdive/title.html" target="_blank">Canvas Deep Dive</a></li>
-               <li><a href="http://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html" target="_blank">Canvas Handbook</a></li>
-               <li><a href="https://webglfundamentals.org/" target="_blank">WebGL Fundamentals</a></li> 
-               <li><a href="https://www.youtube.com/watch?v=gm1QtePAYTM" target="_blank">HTML5 Canvas API Crash Course</a></li>
-            </ul>
-         </section>
-         <section>
-            <h1>Game over</h1>
-            <img src="../assets//titenic.png">
-         </section>
+            <section>
+               <h3>Resources</h3>
+               <ul>
+                  <p><small>If you wish to pursue this topic further, here are some useful links</small></p>
+                  <li><a href="https://joshondesign.com/p/books/canvasdeepdive/title.html" target="_blank">Canvas Deep Dive</a></li>
+                  <li><a href="http://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html" target="_blank">Canvas Handbook</a></li>
+                  <li><a href="https://webglfundamentals.org/" target="_blank">WebGL Fundamentals</a></li>
+                  <li><a href="https://www.youtube.com/watch?v=gm1QtePAYTM" target="_blank">HTML5 Canvas API Crash Course</a></li>
+               </ul>
+               <aside class="notes">
+                  I'll leave here a list of useful links in case this topic has lit your interest towards gamedev. It's a vast field but a rewarding one. 
+               </aside>
+            </section>
+            <section>
+               <h1>Game over</h1>
+               <img src="../assets//titenic.png">
+               <aside class="notes">
+                  Thank you for your time and if you have further question please feel free to ask
+               </aside>
+            </section>
          </div>
       </div>
       <script src="js/reveal.js"></script>
